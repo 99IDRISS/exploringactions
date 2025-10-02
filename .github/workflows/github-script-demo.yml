@@ -3,12 +3,16 @@ name: Testing Github-Script
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+  issues: write
+  
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/github-script@v5
+      - uses: actions/github-script@v7
         id: create-comment
         with:
           script: |
